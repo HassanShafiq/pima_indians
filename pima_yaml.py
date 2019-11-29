@@ -1,5 +1,8 @@
 # MLP for Pima Indians Dataset serialize to YAML and HDF5
 
+#Kaggle Dataset Download URL:
+#https://www.kaggle.com/kumargh/pimaindiansdiabetescsv/download
+
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.models import model_from_yaml
