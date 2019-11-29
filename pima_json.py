@@ -41,21 +41,21 @@ print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 
 # Serialize model to JSON
 model_json = model.to_json()
-with open("./jmodel/pima_model.json", "w") as json_file:
+with open("pima_model.json", "w") as json_file:
     json_file.write(model_json)
 # serialize weights to HDF5
-model.save_weights("./jmodel/pima_weights.h5")
+model.save_weights("pima_weights.h5")
 print("Saved model to disk")
 
 # later...
 
 # load json and create model
-json_file = open('./jmodel/pima_model.json', 'r')
+json_file = open('pima_model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 # load weights into new model
-loaded_model.load_weights("./jmodel/pima_weights.h5")
+loaded_model.load_weights("pima_weights.h5")
 print("Loaded model from disk")
 
 # evaluate loaded model on test data
